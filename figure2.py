@@ -1,8 +1,8 @@
 # coding : utf-8
 
-import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import dates
+import numpy as np
 import subprocess
 import time
 
@@ -31,8 +31,8 @@ t0 = time.time()
 #           set some parameters           #
 ###########################################
 
-t_opt  = 690    # duration T of the interval
-d_opt  = 2      # degree of fitting polynomial
+t_opt  = 690    # optimal duration T of the interval
+d_opt  = 2      # optimal degree of fitting polynomial
 n_extr = 65     # length of the extrapolation window
 n_scan = 10     # repetition of fitting procedure every n seconds
 
@@ -62,9 +62,9 @@ idx_thk = int(np.where(t[:,1] == tEQ)[0])
 
 
 ###########################################
-#          statistical analysis           #
-#  apply the least-squares polynomial fit #
-#            to the waveforms             #
+#          statistical analysis :         #
+#      apply the optimal least-squares    #
+#      polynomial fit to the waveforms    #
 ###########################################
 
 

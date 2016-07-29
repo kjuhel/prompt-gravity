@@ -21,8 +21,8 @@ t0 = time.time()
 #           set some parameters           #
 ###########################################
 
-n_vect = [690] # np.arange(300, 3000, 200)  # duration T of the interval
-d_vect = [2]   # range(1,4)                 # degree of fitting polynomial
+n_vect = np.arange(300, 3000, 200)  # duration T of the interval
+d_vect = range(1,4)                 # degree of fitting polynomial
 n_extr = 65       # length of the extrapolation window
 n_scan = 10       # repetition of fitting procedure every n seconds
 
