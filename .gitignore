@@ -1,0 +1,5 @@
+# ignore swap files
+*.swp
+
+# ignore OS generated files
+.DS_Store

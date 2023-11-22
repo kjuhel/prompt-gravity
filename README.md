@@ -1,13 +1,24 @@
 # prompt-gravity
-#
-# Routines used in Montagner et al : "Prompt gravity signal induced by the 2011 Tohoku-oki earthquake", Nature Communications
-#
-# The statistical analysis described in the main text and the supplementary informations of the aforementioned article
-# is performed with the Python scritps kamioka_analysis.py and optimal_stacking.py, for the Kamioka station only and for
-# the all dataset, respectively.
-#
-# Scripts figure2.py and figure3.py reproduce the corresponding figures in the article, stored in Graphics directory.
-#
-# Gravimetric and seismic data can be found in the kam and fnet directories, respectively.
-#
-# DOI Repository :
+
+## Statistical analysis and figures
+
+The statistical analysis described in the main text and the supplementary informations of
+[Montagner et al. (2016)](https://doi.org/10.1038/ncomms13349) is performed with the Python scripts
+`kamioka_analysis.py` (Kamioka station only) and `optimal_stacking.py` (all dataset).
+
+Gravimetric and seismic data can be found in the `kam/` and `fnet/` directories, respectively.
+
+Using the Python script `figure2.py`, the Figure 2 (stored in `Graphics/`) of Montagner et al. (2016) should look as follows:
+![graphics/figure2.pdf](graphics/figure2.pdf)
+
+Using the Python script `figure3.py`, the Figure 3 (stored in `Graphics/`) of Montagner et al. (2016) should look as follows:
+![graphics/figure3.pdf](graphics/figure3.pdf)
+
+
+## Contact information
+* [Jean-Paul Montagner](mailto:jpm@ipgp.fr)
+* [Kévin Juhel](mailto:kjuhel.pro@gmail.com)
+
+
+## References
+* Montagner, JP., Juhel, K., Barsuglia, M. et al. Prompt gravity signal induced by the 2011 Tohoku-Oki earthquake. Nat Commun 7, 13349 (2016). DOI: [10.1038/ncomms13349](https://doi.org/10.1038/ncomms13349)

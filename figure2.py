@@ -104,25 +104,43 @@ while idx_init[-1] + t_opt + n_extr > len(gr):
 idx_stop = idx_init + t_opt + n_extr
 
 dd0 = ['01 march 2011, 05:46:00', '06 march 2011']
-label1 = 'Fit residuals'
-label2 = 'Reduced gravity signals A'
 
-fig, ax1 = plt.subplots(1, figsize=(15,8))
-ax1.grid()
+fig = plt.figure(figsize=(8,4))
+
+ax1 = fig.add_axes([0.09, 0.13, 0.9, 0.74])
+ax1.grid(ls='--', lw=0.5)
+ax1.set_axisbelow(True)
+
+ax1.plot(24*3600*(t[idx_thk - t_opt + 1: idx_thk + 1 + n_extr] - tEQ), res, 'gold')
+
+ax1.set_ylim(-0.55, 0.55)
+ax1.set_xlim(24*3600*(dates.datestr2num('11 march 2011, 5:35:00')-tEQ), 24*3600*(dates.datestr2num('11 march 2011, 5:47:26')-tEQ))
+
+ax1.set_xlabel('Time (in seconds from main shock)', fontsize=12, labelpad=5)
+ax1.set_ylabel(r'Amplitude ($\mu$gal)', fontsize=12)
+
+ax1.tick_params(axis='both', labelsize=10)
+
+
 ax2 = ax1.twiny()
+ax2.set_axisbelow(True)
 
-ax1.plot(24*3600*(t[idx_thk - t_opt + 1: idx_thk + 1 + n_extr] - tEQ), res, 'y')
-ax2.plot(t[idx_thk - t_opt + 1: idx_thk + 1 + n_extr], res, 'y')
+ax2.plot(t[idx_thk - t_opt + 1: idx_thk + 1 + n_extr,1], res, color='lightgray', label='Fit residuals')
 
 for iw, wd0 in enumerate(dd0):
-	tt = np.array([dates.seconds(item) for item in idx_stop])
-	tt += dates.datestr2num(wd0)
+    tt = np.array([dates.seconds(item) for item in idx_stop])
+    tt += dates.datestr2num(wd0)
 
-	ax2.plot(tt, opt_full[:,iw], lw=2, c='b')
+    if iw == 0:
+        ax2.plot(tt, opt_full[:,iw], 'cornflowerblue', lw=2, label=r'Reduced gravity signals $\mathcal{A}$')
+    else:
+        ax2.plot(tt, opt_full[:,iw], 'cornflowerblue', lw=2)
+
+ax2.legend(loc='upper left', fontsize=10)
 
 ax2.axvline(x=tEQ, c='k', ymin=0.1, ymax=0.9, lw=2)
-ax2.axhline(y=a_thk, c='k', lw=1, ls='--')
-ax2.axhline(y=-a_thk, c='k', lw=1, ls='--')
+ax2.axhline(y=a_thk, c='darkorange', lw=1.5, ls='--')
+ax2.axhline(y=-a_thk, c='darkorange', lw=1.5, ls='--')
 
 locator = dates.AutoDateLocator()
 formatter = dates.AutoDateFormatter(locator)
@@ -130,24 +148,16 @@ formatter.scaled = {1. : '%d/%m', 1./24. : '%H:%M:%S', 1./(24.*60.) : '%H:%M:%S'
 ax2.xaxis.set_major_locator(locator)
 ax2.xaxis.set_major_formatter(formatter)
 
-ax1.set_xlabel('Time (in seconds from main shock)', fontsize=17, labelpad=12)
-ax2.set_xlabel('Time (UTC), march 11th 2011', fontsize=17, labelpad=12)
-ax1.set_ylabel(r'Amplitude ($\mu$gal)', fontsize=17)
+ax2.set_xlabel('Time (UTC), march 11th 2011', fontsize=12, labelpad=5)
 
-ax2.legend([label1, label2], loc = 'upper left', fontsize=16)
-
-ax1.set_xlim(24*3600*(dates.datestr2num('11 march 2011, 5:35:00')-tEQ), 24*3600*(dates.datestr2num('11 march 2011, 5:47:26')-tEQ))
 ax2.set_xlim(dates.datestr2num('11 march 2011, 5:35:00'), dates.datestr2num('11 march 2011, 5:47:26'))
 
-ax1.set_ylim(-0.55, 0.55)
 ax2.set_ylim(-0.55, 0.55)
 
-ax1.tick_params(axis='both', labelsize=15)
-ax2.tick_params(axis='both', labelsize=15)
+ax2.tick_params(axis='both', labelsize=10)
 
-figtitle = './graphics/figure2.pdf'
-fig.savefig(figtitle)
-subprocess.call(["open",figtitle])
+file = './graphics/figure2.pdf'
+fig.savefig(file, dpi=300)
+subprocess.call(["open", "-a", "/Applications/Skim.app", file])
 
 print 'ellapsed time to run = ', time.time() - t0, 'seconds'
-
