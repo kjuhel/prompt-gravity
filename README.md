@@ -8,10 +8,12 @@ The statistical analysis described in the main text and the supplementary inform
 
 Gravimetric and seismic data can be found in the `kam/` and `fnet/` directories, respectively.
 
-Using the Python script `figure2.py`, the Figure 2 (stored in `Graphics/`) of Montagner et al. (2016) should look as follows:
+Using the Python script `figure2.py`, the Figure 2 of Montagner et al. (2016) should look as follows:
+
 ![graphics/figure2.pdf](graphics/figure2.pdf)
 
-Using the Python script `figure3.py`, the Figure 3 (stored in `Graphics/`) of Montagner et al. (2016) should look as follows:
+Using the Python script `figure3.py`, the Figure 3 of Montagner et al. (2016) should look as follows:
+
 ![graphics/figure3.pdf](graphics/figure3.pdf)
 
 
