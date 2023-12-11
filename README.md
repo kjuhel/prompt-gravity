@@ -9,10 +9,10 @@ The statistical analysis described in the main text and the supplementary inform
 Gravimetric and seismic data can be found in the `kam/` and `fnet/` directories, respectively.
 
 Using the Python script `figure2.py`, the Figure 2 of Montagner et al. (2016) should look as follows:
-![graphics/figure2.pdf](graphics/figure2.pdf)
+![graphics/figure2.pdf](graphics/figure2.png)
 
 Using the Python script `figure3.py`, the Figure 3 of Montagner et al. (2016) should look as follows:
-![graphics/figure3.pdf](graphics/figure3.pdf)
+![graphics/figure3.pdf](graphics/figure3.png)
 
 
 ## Contact information
@@ -21,4 +21,4 @@ Using the Python script `figure3.py`, the Figure 3 of Montagner et al. (2016) sh
 
 
 ## References
-* Montagner, JP., Juhel, K., Barsuglia, M. et al. Prompt gravity signal induced by the 2011 Tohoku-Oki earthquake. Nat Commun 7, 13349 (2016). DOI: [10.1038/ncomms13349](https://doi.org/10.1038/ncomms13349)
+* Montagner J.-P., Juhel K., Barsuglia M. et al. Prompt gravity signal induced by the 2011 Tohoku-Oki earthquake. Nat Commun 7, 13349 (2016). DOI: [10.1038/ncomms13349](https://doi.org/10.1038/ncomms13349)
